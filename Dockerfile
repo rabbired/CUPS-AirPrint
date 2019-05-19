@@ -8,11 +8,10 @@ MAINTAINER RedZ
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 # Install basic tools and cups
-RUN apt-get install -y sudo locales whois cups cups-client cups-bsd
-# Install all drivers
-RUN apt-get install -y printer-driver-all
-# Install HP drivers
-RUN apt-get install -y hpijs-ppds hp-ppd hplip printer-driver-foo2zjs printer-driver-fujixerox hpijs-ppds hp-ppd hplip
+RUN apt-get install -y sudo locales whois cups cups-client cups-bsd avahi-discover
+# Install drivers
+RUN apt-get install -y printer-driver-all hpijs-ppds hp-ppd hplip \
+	printer-driver-foo2zjs printer-driver-fujixerox hpijs-ppds hp-ppd hplip
 ENV DEBIAN_FRONTEND "" LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANGUAGE=en_US:en TZ=Asia/Shanghai
 
 RUN	sed -i 's/Listen localhost:631/Listen 0.0.0.0:631/' /etc/cups/cupsd.conf && \
