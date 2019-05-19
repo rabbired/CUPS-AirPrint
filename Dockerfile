@@ -2,7 +2,7 @@ FROM debian:testing
 MAINTAINER RedZ
 
 # echo sources.list
-RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+#RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 
 # Install Packages
 ENV DEBIAN_FRONTEND noninteractive
