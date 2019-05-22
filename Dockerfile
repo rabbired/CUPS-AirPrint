@@ -3,7 +3,7 @@ MAINTAINER RedZ
 
 # Install basic tools and cups and drivers
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && apt-get upgrade \
+RUN apt-get update && apt-get upgrade && \
 	apt-get install -y sudo locales whois cups cups-client cups-bsd avahi-discover \
 	printer-driver-all hpijs-ppds hp-ppd hplip printer-driver-foo2zjs \
 	printer-driver-fujixerox hpijs-ppds hp-ppd hplip && \
