@@ -24,7 +24,7 @@ WORKDIR /opt/cups
 # Install CUPS/AVAHI
 #RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories \
 && apk update --no-cache && apk add --no-cache alpine-sdk cups cups-filters avahi inotify-tools groff \
-&& git clone https://github.com/mikerr/foo2zjs.git
+&& git clone https://github.com/mikerr/foo2zjs.git \
 #&& wget -O foo2zjs.tar.gz http://foo2zjs.rkkda.com/foo2zjs.tar.gz \
 #&& tar zxf foo2zjs.tar.gz \
 && cd foo2zjs \
