@@ -8,7 +8,8 @@ ENV TERM xterm
 WORKDIR /opt/cups
 
 # Install CUPS/AVAHI
-apk update --no-cache && apk add --no-cache alpine-sdk cups cups-filters avahi inotify-tools groff \
+RUN apk update --no-cache && apk upgrade --no-cache \
+&& apk add --no-cache alpine-sdk cups cups-filters avahi inotify-tools groff \
 && git clone https://github.com/mikerr/foo2zjs.git \
 && cd foo2zjs \
 && make \
